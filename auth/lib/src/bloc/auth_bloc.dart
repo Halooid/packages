@@ -16,6 +16,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         super(AuthInitial()) {
     on<AuthCheckRequested>(_onCheckRequested);
     on<AuthLoginRequested>(_onLoginRequested);
+    on<AuthRegisterRequested>(_onRegisterRequested);
     on<AuthLogoutRequested>(_onLogoutRequested);
   }
 
@@ -41,6 +42,21 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(AuthAuthenticated(result.accessToken!));
     } else {
       emit(AuthFailureState('Login failed'));
+    }
+  }
+
+  Future<void> _onRegisterRequested(AuthRegisterRequested event, Emitter<AuthState> emit) async {
+    emit(AuthLoading());
+    final result = await _authService.register();
+    if (result != null && result.accessToken != null && result.refreshToken != null) {
+      await _tokenRepository.saveTokens(
+        accessToken: result.accessToken!,
+        refreshToken: result.refreshToken!,
+        idToken: result.idToken,
+      );
+      emit(AuthAuthenticated(result.accessToken!));
+    } else {
+      emit(AuthFailureState('Registration failed'));
     }
   }
 
