@@ -4,13 +4,13 @@ abstract class Failure {
 }
 
 class ServerFailure extends Failure {
-  const ServerFailure([String message = 'Server failure']) : super(message);
+  const ServerFailure([super.message = 'Server failure']);
 }
 
 class CacheFailure extends Failure {
-  const CacheFailure([String message = 'Cache failure']) : super(message);
+  const CacheFailure([super.message = 'Cache failure']);
 }
 
 class AuthFailure extends Failure {
-  const AuthFailure([String message = 'Authentication failure']) : super(message);
+  const AuthFailure([super.message = 'Authentication failure']);
 }
