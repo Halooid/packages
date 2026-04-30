@@ -29,6 +29,11 @@ class TokenRepository {
     return box.get(refreshTokenKey);
   }
 
+  Future<String?> getIdToken() async {
+    final box = await Hive.openBox(boxName);
+    return box.get(idTokenKey);
+  }
+
   Future<void> clearTokens() async {
     final box = await Hive.openBox(boxName);
     await box.clear();

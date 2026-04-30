@@ -4,7 +4,8 @@ class AuthInitial extends AuthState {}
 class AuthLoading extends AuthState {}
 class AuthAuthenticated extends AuthState {
   final String accessToken;
-  AuthAuthenticated(this.accessToken);
+  final String? idToken;
+  AuthAuthenticated(this.accessToken, {this.idToken});
 }
 class AuthUnauthenticated extends AuthState {}
 class AuthFailureState extends AuthState {

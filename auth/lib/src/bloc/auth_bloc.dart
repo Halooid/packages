@@ -24,7 +24,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(AuthLoading());
     final accessToken = await _tokenRepository.getAccessToken();
     if (accessToken != null) {
-      emit(AuthAuthenticated(accessToken));
+      final idToken = await _tokenRepository.getIdToken();
+      emit(AuthAuthenticated(accessToken, idToken: idToken));
     } else {
       emit(AuthUnauthenticated());
     }
@@ -39,7 +40,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         refreshToken: result.refreshToken!,
         idToken: result.idToken,
       );
-      emit(AuthAuthenticated(result.accessToken!));
+      emit(AuthAuthenticated(result.accessToken!, idToken: result.idToken));
     } else {
       emit(AuthFailureState('Login failed'));
     }
@@ -54,7 +55,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         refreshToken: result.refreshToken!,
         idToken: result.idToken,
       );
-      emit(AuthAuthenticated(result.accessToken!));
+      emit(AuthAuthenticated(result.accessToken!, idToken: result.idToken));
     } else {
       emit(AuthFailureState('Registration failed'));
     }
