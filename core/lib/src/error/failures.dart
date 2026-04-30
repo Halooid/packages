@@ -14,3 +14,7 @@ class CacheFailure extends Failure {
 class AuthFailure extends Failure {
   const AuthFailure([super.message = 'Authentication failure']);
 }
+
+class NetworkFailure extends Failure {
+  const NetworkFailure([super.message = 'Network failure']);
+}
