@@ -19,8 +19,8 @@ import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 /// User Messages
-class User extends $pb.GeneratedMessage {
-  factory User({
+class SplixUser extends $pb.GeneratedMessage {
+  factory SplixUser({
     $core.String? id,
     $core.String? email,
     $core.String? name,
@@ -39,17 +39,17 @@ class User extends $pb.GeneratedMessage {
     return result;
   }
 
-  User._();
+  SplixUser._();
 
-  factory User.fromBuffer($core.List<$core.int> data,
+  factory SplixUser.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory User.fromJson($core.String json,
+  factory SplixUser.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'User',
+      _omitMessageNames ? '' : 'SplixUser',
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'halooid.splix.v1'),
       createEmptyInstance: create)
@@ -63,22 +63,22 @@ class User extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  User clone() => deepCopy();
+  SplixUser clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  User copyWith(void Function(User) updates) =>
-      super.copyWith((message) => updates(message as User)) as User;
+  SplixUser copyWith(void Function(SplixUser) updates) =>
+      super.copyWith((message) => updates(message as SplixUser)) as SplixUser;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static User create() => User._();
+  static SplixUser create() => SplixUser._();
   @$core.override
-  User createEmptyInstance() => create();
+  SplixUser createEmptyInstance() => create();
   @$core.pragma('dart2js:noInline')
-  static User getDefault() =>
-      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<User>(create);
-  static User? _defaultInstance;
+  static SplixUser getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SplixUser>(create);
+  static SplixUser? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -243,7 +243,7 @@ class CreateUserRequest extends $pb.GeneratedMessage {
 
 class CreateUserResponse extends $pb.GeneratedMessage {
   factory CreateUserResponse({
-    User? user,
+    SplixUser? user,
   }) {
     final result = create();
     if (user != null) result.user = user;
@@ -264,7 +264,8 @@ class CreateUserResponse extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'halooid.splix.v1'),
       createEmptyInstance: create)
-    ..aOM<User>(1, _omitFieldNames ? '' : 'user', subBuilder: User.create)
+    ..aOM<SplixUser>(1, _omitFieldNames ? '' : 'user',
+        subBuilder: SplixUser.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -287,15 +288,15 @@ class CreateUserResponse extends $pb.GeneratedMessage {
   static CreateUserResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  User get user => $_getN(0);
+  SplixUser get user => $_getN(0);
   @$pb.TagNumber(1)
-  set user(User value) => $_setField(1, value);
+  set user(SplixUser value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasUser() => $_has(0);
   @$pb.TagNumber(1)
   void clearUser() => $_clearField(1);
   @$pb.TagNumber(1)
-  User ensureUser() => $_ensure(0);
+  SplixUser ensureUser() => $_ensure(0);
 }
 
 class AddConnectionRequest extends $pb.GeneratedMessage {
@@ -451,7 +452,7 @@ class ListConnectionsRequest extends $pb.GeneratedMessage {
 
 class ListConnectionsResponse extends $pb.GeneratedMessage {
   factory ListConnectionsResponse({
-    $core.Iterable<User>? connections,
+    $core.Iterable<SplixUser>? connections,
   }) {
     final result = create();
     if (connections != null) result.connections.addAll(connections);
@@ -472,8 +473,8 @@ class ListConnectionsResponse extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'halooid.splix.v1'),
       createEmptyInstance: create)
-    ..pPM<User>(1, _omitFieldNames ? '' : 'connections',
-        subBuilder: User.create)
+    ..pPM<SplixUser>(1, _omitFieldNames ? '' : 'connections',
+        subBuilder: SplixUser.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -497,7 +498,7 @@ class ListConnectionsResponse extends $pb.GeneratedMessage {
   static ListConnectionsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $pb.PbList<User> get connections => $_getList(0);
+  $pb.PbList<SplixUser> get connections => $_getList(0);
 }
 
 /// Group Messages

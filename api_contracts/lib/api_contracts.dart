@@ -12,5 +12,4 @@ export 'src/generated/auth/v1/auth.pbjson.dart';
 
 export 'src/generated/auth/v1/user.pb.dart';
 export 'src/generated/auth/v1/user.pbenum.dart';
-export 'src/generated/auth/v1/user.pbgrpc.dart';
 export 'src/generated/auth/v1/user.pbjson.dart';

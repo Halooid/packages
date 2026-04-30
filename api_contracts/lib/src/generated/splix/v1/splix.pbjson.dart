@@ -15,9 +15,9 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
-@$core.Deprecated('Use userDescriptor instead')
-const User$json = {
-  '1': 'User',
+@$core.Deprecated('Use splixUserDescriptor instead')
+const SplixUser$json = {
+  '1': 'SplixUser',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
@@ -41,12 +41,12 @@ const User$json = {
   ],
 };
 
-/// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
-    'CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIUCgVlbWFpbBgCIAEoCVIFZW1haWwSEgoEbmFtZRgDIA'
-    'EoCVIEbmFtZRIhCgxjb3VudHJ5X2NvZGUYBCABKAlSC2NvdW50cnlDb2RlEjIKFWRlZmF1bHRf'
-    'Y3VycmVuY3lfY29kZRgFIAEoCVITZGVmYXVsdEN1cnJlbmN5Q29kZRI5CgpjcmVhdGVkX2F0GA'
-    'YgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJY3JlYXRlZEF0');
+/// Descriptor for `SplixUser`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List splixUserDescriptor = $convert.base64Decode(
+    'CglTcGxpeFVzZXISDgoCaWQYASABKAlSAmlkEhQKBWVtYWlsGAIgASgJUgVlbWFpbBISCgRuYW'
+    '1lGAMgASgJUgRuYW1lEiEKDGNvdW50cnlfY29kZRgEIAEoCVILY291bnRyeUNvZGUSMgoVZGVm'
+    'YXVsdF9jdXJyZW5jeV9jb2RlGAUgASgJUhNkZWZhdWx0Q3VycmVuY3lDb2RlEjkKCmNyZWF0ZW'
+    'RfYXQYBiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgljcmVhdGVkQXQ=');
 
 @$core.Deprecated('Use createUserRequestDescriptor instead')
 const CreateUserRequest$json = {
@@ -81,7 +81,7 @@ const CreateUserResponse$json = {
       '3': 1,
       '4': 1,
       '5': 11,
-      '6': '.halooid.splix.v1.User',
+      '6': '.halooid.splix.v1.SplixUser',
       '10': 'user'
     },
   ],
@@ -89,8 +89,8 @@ const CreateUserResponse$json = {
 
 /// Descriptor for `CreateUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List createUserResponseDescriptor = $convert.base64Decode(
-    'ChJDcmVhdGVVc2VyUmVzcG9uc2USKgoEdXNlchgBIAEoCzIWLmhhbG9vaWQuc3BsaXgudjEuVX'
-    'NlclIEdXNlcg==');
+    'ChJDcmVhdGVVc2VyUmVzcG9uc2USLwoEdXNlchgBIAEoCzIbLmhhbG9vaWQuc3BsaXgudjEuU3'
+    'BsaXhVc2VyUgR1c2Vy');
 
 @$core.Deprecated('Use addConnectionRequestDescriptor instead')
 const AddConnectionRequest$json = {
@@ -136,7 +136,7 @@ const ListConnectionsResponse$json = {
       '3': 1,
       '4': 3,
       '5': 11,
-      '6': '.halooid.splix.v1.User',
+      '6': '.halooid.splix.v1.SplixUser',
       '10': 'connections'
     },
   ],
@@ -145,8 +145,8 @@ const ListConnectionsResponse$json = {
 /// Descriptor for `ListConnectionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listConnectionsResponseDescriptor =
     $convert.base64Decode(
-        'ChdMaXN0Q29ubmVjdGlvbnNSZXNwb25zZRI4Cgtjb25uZWN0aW9ucxgBIAMoCzIWLmhhbG9vaW'
-        'Quc3BsaXgudjEuVXNlclILY29ubmVjdGlvbnM=');
+        'ChdMaXN0Q29ubmVjdGlvbnNSZXNwb25zZRI9Cgtjb25uZWN0aW9ucxgBIAMoCzIbLmhhbG9vaW'
+        'Quc3BsaXgudjEuU3BsaXhVc2VyUgtjb25uZWN0aW9ucw==');
 
 @$core.Deprecated('Use groupDescriptor instead')
 const Group$json = {
