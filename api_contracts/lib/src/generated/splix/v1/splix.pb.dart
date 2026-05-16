@@ -299,6 +299,119 @@ class CreateUserResponse extends $pb.GeneratedMessage {
   SplixUser ensureUser() => $_ensure(0);
 }
 
+class GetUserRequest extends $pb.GeneratedMessage {
+  factory GetUserRequest({
+    $core.String? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  GetUserRequest._();
+
+  factory GetUserRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetUserRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetUserRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'halooid.splix.v1'),
+      createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUserRequest clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUserRequest copyWith(void Function(GetUserRequest) updates) =>
+      super.copyWith((message) => updates(message as GetUserRequest))
+          as GetUserRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetUserRequest create() => GetUserRequest._();
+  @$core.override
+  GetUserRequest createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetUserRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetUserRequest>(create);
+  static GetUserRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get id => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set id($core.String value) => $_setString(0, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+}
+
+class GetUserResponse extends $pb.GeneratedMessage {
+  factory GetUserResponse({
+    SplixUser? user,
+  }) {
+    final result = create();
+    if (user != null) result.user = user;
+    return result;
+  }
+
+  GetUserResponse._();
+
+  factory GetUserResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetUserResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetUserResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'halooid.splix.v1'),
+      createEmptyInstance: create)
+    ..aOM<SplixUser>(1, _omitFieldNames ? '' : 'user',
+        subBuilder: SplixUser.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUserResponse clone() => deepCopy();
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetUserResponse copyWith(void Function(GetUserResponse) updates) =>
+      super.copyWith((message) => updates(message as GetUserResponse))
+          as GetUserResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetUserResponse create() => GetUserResponse._();
+  @$core.override
+  GetUserResponse createEmptyInstance() => create();
+  @$core.pragma('dart2js:noInline')
+  static GetUserResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetUserResponse>(create);
+  static GetUserResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  SplixUser get user => $_getN(0);
+  @$pb.TagNumber(1)
+  set user(SplixUser value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasUser() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearUser() => $_clearField(1);
+  @$pb.TagNumber(1)
+  SplixUser ensureUser() => $_ensure(0);
+}
+
 class AddConnectionRequest extends $pb.GeneratedMessage {
   factory AddConnectionRequest({
     $core.String? connectedUserId,

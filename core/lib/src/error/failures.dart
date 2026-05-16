@@ -18,3 +18,7 @@ class AuthFailure extends Failure {
 class NetworkFailure extends Failure {
   const NetworkFailure([super.message = 'Network failure']);
 }
+
+class NotFoundFailure extends Failure {
+  const NotFoundFailure([super.message = 'Not found']);
+}

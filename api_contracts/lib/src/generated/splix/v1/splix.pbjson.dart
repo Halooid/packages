@@ -92,6 +92,38 @@ final $typed_data.Uint8List createUserResponseDescriptor = $convert.base64Decode
     'ChJDcmVhdGVVc2VyUmVzcG9uc2USLwoEdXNlchgBIAEoCzIbLmhhbG9vaWQuc3BsaXgudjEuU3'
     'BsaXhVc2VyUgR1c2Vy');
 
+@$core.Deprecated('Use getUserRequestDescriptor instead')
+const GetUserRequest$json = {
+  '1': 'GetUserRequest',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+/// Descriptor for `GetUserRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUserRequestDescriptor =
+    $convert.base64Decode('Cg5HZXRVc2VyUmVxdWVzdBIOCgJpZBgBIAEoCVICaWQ=');
+
+@$core.Deprecated('Use getUserResponseDescriptor instead')
+const GetUserResponse$json = {
+  '1': 'GetUserResponse',
+  '2': [
+    {
+      '1': 'user',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.halooid.splix.v1.SplixUser',
+      '10': 'user'
+    },
+  ],
+};
+
+/// Descriptor for `GetUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getUserResponseDescriptor = $convert.base64Decode(
+    'Cg9HZXRVc2VyUmVzcG9uc2USLwoEdXNlchgBIAEoCzIbLmhhbG9vaWQuc3BsaXgudjEuU3BsaX'
+    'hVc2VyUgR1c2Vy');
+
 @$core.Deprecated('Use addConnectionRequestDescriptor instead')
 const AddConnectionRequest$json = {
   '1': 'AddConnectionRequest',

@@ -39,6 +39,13 @@ class UserServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createUser, request, options: options);
   }
 
+  $grpc.ResponseFuture<$0.GetUserResponse> getUser(
+    $0.GetUserRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getUser, request, options: options);
+  }
+
   $grpc.ResponseFuture<$0.AddConnectionResponse> addConnection(
     $0.AddConnectionRequest request, {
     $grpc.CallOptions? options,
@@ -60,6 +67,11 @@ class UserServiceClient extends $grpc.Client {
           '/halooid.splix.v1.UserService/CreateUser',
           ($0.CreateUserRequest value) => value.writeToBuffer(),
           $0.CreateUserResponse.fromBuffer);
+  static final _$getUser =
+      $grpc.ClientMethod<$0.GetUserRequest, $0.GetUserResponse>(
+          '/halooid.splix.v1.UserService/GetUser',
+          ($0.GetUserRequest value) => value.writeToBuffer(),
+          $0.GetUserResponse.fromBuffer);
   static final _$addConnection =
       $grpc.ClientMethod<$0.AddConnectionRequest, $0.AddConnectionResponse>(
           '/halooid.splix.v1.UserService/AddConnection',
@@ -84,6 +96,13 @@ abstract class UserServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.CreateUserRequest.fromBuffer(value),
         ($0.CreateUserResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetUserRequest, $0.GetUserResponse>(
+        'GetUser',
+        getUser_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetUserRequest.fromBuffer(value),
+        ($0.GetUserResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.AddConnectionRequest, $0.AddConnectionResponse>(
             'AddConnection',
@@ -111,6 +130,14 @@ abstract class UserServiceBase extends $grpc.Service {
 
   $async.Future<$0.CreateUserResponse> createUser(
       $grpc.ServiceCall call, $0.CreateUserRequest request);
+
+  $async.Future<$0.GetUserResponse> getUser_Pre($grpc.ServiceCall $call,
+      $async.Future<$0.GetUserRequest> $request) async {
+    return getUser($call, await $request);
+  }
+
+  $async.Future<$0.GetUserResponse> getUser(
+      $grpc.ServiceCall call, $0.GetUserRequest request);
 
   $async.Future<$0.AddConnectionResponse> addConnection_Pre(
       $grpc.ServiceCall $call,
